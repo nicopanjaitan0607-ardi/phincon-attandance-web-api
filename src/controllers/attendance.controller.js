@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-// const Schema = mongoose.Schema
 const createError = require('http-errors')
 const moment = require('moment')
 const { checkInValidation, checkOutValidation, getHistoryValidation } = require('../helpers/validation.schema')
