@@ -24,14 +24,13 @@ exports.getOnBoarding = async (req, res, next) => {
 
 exports.setOnBoarding = async (req, res, next) => {
   try {
-    // Validation
-    const result = await onBoardingValidation.validateAsync(req.body)
+    await onBoardingValidation.validateAsync(req.body)
     if (!req.file) throw createError(422, 'File image is required')
 
     const count = await onBoardingModel.count()
     if (count === 3 || count > 3) throw createError(400, 'Data has exceeded capacity')
 
-    const results = await onBoardingModel.create({
+    const result = await onBoardingModel.create({
       image: req.file.filename,
       title: req.body.title,
       description: req.body.description
@@ -42,7 +41,7 @@ exports.setOnBoarding = async (req, res, next) => {
       success: {
         status: 200,
         message: 'Data has been created successfully',
-        results
+        result
       }
     })
   } catch (error) {
@@ -52,6 +51,10 @@ exports.setOnBoarding = async (req, res, next) => {
         fs.unlinkSync(process.env.PATH_IMAGE_ON_BOARDING + req.file.filename)
       }
     }
+
+    if (error.isJoi === true)
+      error = createError(422, error.message)
+
     next(error)
   }
 }
@@ -88,6 +91,10 @@ exports.updateOnBoarding = async (req, res, next) => {
         fs.unlinkSync(process.env.PATH_IMAGE_ON_BOARDING + req.file.filename)
       }
     }
+
+    if (error.isJoi === true)
+      error = createError(422, error.message)
+
     next(error)
   }
 }

@@ -1,4 +1,5 @@
 /database
 /node_modules
+/test
 /docker-compose.yml
 /Dockerfile
