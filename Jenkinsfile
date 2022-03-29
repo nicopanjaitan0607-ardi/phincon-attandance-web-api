@@ -12,7 +12,7 @@ node {
    stage('Build') {
      nodejs(nodeJSInstallationName: 'nodejs') {
        sh 'npm install'
-       sh 'npm test'
+       //sh 'npm test'
      }
    }
  /* stage('SonarQube analysis') {
