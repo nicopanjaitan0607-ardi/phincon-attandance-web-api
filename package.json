@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "start": "node index.js",
-    "test": "npm install inherits && mocha"
+    "deploy": "node index.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
