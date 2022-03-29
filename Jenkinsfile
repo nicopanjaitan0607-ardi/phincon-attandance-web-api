@@ -49,11 +49,11 @@ node {
   }
 }
 */
- /* stage('Initialize'){
+ stage('Initialize'){
         def dockerHome = tool 'docker'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
     }
-   */
+ 
    stage('docker build') {
      
        def app = docker.build("phincon-attandance-web-api:${commit_id}", '.')
