@@ -1,5 +1,6 @@
 properties([gitLabConnection(gitLabConnection: 'gitlab', jobCredentialId: ''), [$class: 'GitlabLogoProperty', repositoryName: ''], 
-parameters([choice(choices: ['master\n', 'Dev'], description: 'pilih brach', name: 'branch')])]) node {
+parameters([choice(choices: ['master\n', 'Dev'], description: 'pilih brach', name: 'branch')])]) 
+node {
    def commit_id
    stage('Clone the Git') {
     git 'https://github.com/nicopanjaitan0607-ardi/phincon-attandance-web-api.git'
