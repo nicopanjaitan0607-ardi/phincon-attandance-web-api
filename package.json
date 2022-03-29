@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "deploy": "node index.js"
   },
   "dependencies": {
@@ -25,8 +25,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
-    "inherits": "^2.0.3",
-    "mocha": "^5.2.0",
-    "ms": "^2.1.1"
   }
 }
