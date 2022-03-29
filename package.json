@@ -6,8 +6,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "nodemon index.js",
-    "deploy": "node index.js"
+    "start": "node index.js",
+    "test": "npm install inherits && mocha"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -25,5 +25,8 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
+    "inherits": "^2.0.3",
+    "mocha": "^5.2.0",
+    "ms": "^2.1.1"
   }
 }
